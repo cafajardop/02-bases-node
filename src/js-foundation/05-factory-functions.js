@@ -1,27 +1,14 @@
-
-
-
-/** Funcion que crea una funcion */
-
-
-// const makeBuildPerson = () => {
-
-//     return () => {
-//         return {
-
-//         }
-//     }
-// }
-
-
+const { getUUID, getAge } = require('../plugins');
 
 const buildPerson = ({ name, birthday }) => {
     return {
-        id: new Date().getTime(),
+        id: getUUID(),
         name,
         birthday,
-        age: new Date().getFullYear() = new Date(birthday).getFullYear()
+        age: getAge(birthday)
     }
 }
-const obj = { name: 'John', birthday: '1984-03-03' }
+const obj = { name: 'John', birthday: '1977-04-21' }
 const john = buildPerson(obj);
+
+console.log({ john });
